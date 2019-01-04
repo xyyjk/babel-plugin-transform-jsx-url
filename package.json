@@ -1,0 +1,34 @@
+{
+  "name": "babel-plugin-transform-jsx-url",
+  "version": "1.0.0",
+  "description": "Convert URL to require or import sytanx in JSX.",
+  "main": "src/index.js",
+  "author": "xyyjk",
+  "license": "MIT",
+  "scripts": {
+    "test": "babel test/script.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xyyjk/babel-plugin-transform-jsx-url.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xyyjk/babel-plugin-transform-jsx-url/issues"
+  },
+  "homepage": "https://github.com/xyyjk/babel-plugin-transform-jsx-url#readme",
+  "keywords": [
+    "babel-plugin",
+    "require",
+    "react",
+    "link",
+    "img",
+    "src",
+    "url",
+    "jsx"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-syntax-jsx": "^7.2.0"
+  }
+}

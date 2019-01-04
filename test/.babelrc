@@ -1,0 +1,9 @@
+{
+  "plugins": [
+    "@babel/plugin-syntax-jsx",
+    ["../src", {
+      "root": "/src",
+      "attrs": ["img:src", "img:data-src", "link:href"],
+    }],
+  ],
+}
