@@ -1,17 +1,16 @@
 'use strict';
 
 function checkValidNode({ node, parent, opts }) {
-  if (
-    !node.value.value
-    || /^(https?:)?\/\/.+\./.test(node.value.value)
-  ) {
-    return false;
-  }
+  try {
+    if (!/^(https?:)?\/\/.+\./.test(node.value.value)) {
+      const tag = parent.name.name;
+      const attr = node.name.name;
 
-  const tag = parent.name.name;
-  const attr = node.name.name;
+      return opts.attrs.includes(`${tag}:${attr}`);
+    }
+  } catch (error) {}
 
-  return opts.attrs.includes(`${tag}:${attr}`);
+  return false;
 }
 
 module.exports = function({ types: t }) {

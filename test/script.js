@@ -1,7 +1,7 @@
 function render() {
   return (
     <>
-      <img src="/static/logo.png" />
+      <img src="/static/logo.png" alt />
       <img src={require("/static/logo.png")} />
 
       <img data-src={require("/static/logo.png")} />

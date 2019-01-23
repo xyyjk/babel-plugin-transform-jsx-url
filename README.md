@@ -1,4 +1,4 @@
-# babel-plugin-transform-jsx-url
+# babel-plugin-transform-jsx-url &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/xyyjk/babel-plugin-transform-jsx-url) [![npm version](https://img.shields.io/npm/v/babel-plugin-transform-jsx-url.svg)](https://www.npmjs.com/package/babel-plugin-transform-jsx-url)
 Convert URL to require or import sytanx in JSX.
 
 ## Example
