@@ -1,8 +1,11 @@
-'use strict';
+const path = require('path');
 
 function checkValidNode({ node, parent, opts }) {
   try {
-    if (!/^(https?:)?\/\/.+\./.test(node.value.value)) {
+    if (
+      !/^(https?:)?\/\/.+\./.test(node.value.value)
+      && !/^data:image\/.+;base64,/.test(node.value.value)
+    ) {
       const tag = parent.name.name;
       const attr = node.name.name;
 
@@ -25,9 +28,10 @@ module.exports = function({ types: t }) {
             opts: { attrs: ['img:src', 'link:href'], ...opts },
           })
         ) {
+          const url = path.join((opts.root || ''), node.value.value);
           node.value = t.JSXExpressionContainer(
             t.CallExpression(t.Identifier('require'),
-            [t.StringLiteral(`${opts.root || ''}${node.value.value}`)]),
+            [t.StringLiteral(url)]),
           );
         }
       },
